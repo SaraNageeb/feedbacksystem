@@ -184,7 +184,19 @@ input:focus {
   text-align: center;
   color: rebeccapurple;
 }
- 
+.spinner {
+  animation: spin infinite 5s linear;
+margin-left: 200px ;
+}
+
+@keyframes spin {
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(360deg);
+}
+}
 .about-link {
   display: flex;
   justify-content: flex-end;

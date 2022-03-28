@@ -2,27 +2,29 @@ import { motion,AnimatePresence } from "framer-motion"
 import { useContext } from "react"
 import FeedbackItem from "./FeedbackItem"
 import FeedbackContext from "./context/FeedbackContext"
+import { FaSpinner } from 'react-icons/fa';
 
 const FeedbackList  = () => {
-  const {feedback} =useContext(FeedbackContext)
+  const {feedback,isLoading} =useContext(FeedbackContext)
 
-  if(!feedback ||feedback.length===0){
+  if(!isLoading &&(!feedback ||feedback.length===0)){
    return <p>No Feedback Yet</p>
   }
-  return (
+  return isLoading ? (
+    <FaSpinner className="spinner" spin  size="270px"  /> 
+    ) : (
+    
     <div className='feedback-list'>
-      <AnimatePresence>
-        {feedback.map((item)=>(
-          //fade in when adding  fade out animation when deleting
-            <motion.div 
+       <AnimatePresence>
+        {feedback.map((item) => (
+          <motion.div
             key={item.id}
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
-            >
-            <FeedbackItem key={item.id} item={item}/>
-            </motion.div>
-
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <FeedbackItem key={item.id} item={item} />
+          </motion.div>
         ))}
       </AnimatePresence>
     </div>

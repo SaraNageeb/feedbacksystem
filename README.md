@@ -1,6 +1,7 @@
 # React Feedback System
 
-This is a project from   React Front To Back 2022 course. It allows users to add, update and delete feedback. It uses a mock REST api with json-server. to see [Feedback System cick here](https://feedback-system-react.herokuapp.com/).
+This is a project from   React Front To Back 2022 course. It allows users to add, update and delete feedback. It uses a mock REST api with json-server. 
+
 
 ## This project goes over all of the fundamentals of React 
 

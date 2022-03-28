@@ -14,7 +14,7 @@ export const FeedbackProvider=({children})=>{
       // Fetch feedback
 
   const fetchFeedback = async () => {
-    const response = await fetch(`http://localhost:5000/feedback?_sort=id&_order=desc`)
+    const response = await fetch(`https://feedback-system-react.herokuapp.com/feedback?_sort=id&_order=desc`)
     const data = await response.json()
     setIsLoading(false)
     setFeedback(data)   
